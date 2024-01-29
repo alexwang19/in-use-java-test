@@ -18,7 +18,7 @@ public class JarLoaderController {
     @GetMapping("/load-jars")
     public ResponseEntity<String> loadJars() {
         try {
-            String externalJarsDirectoryPath = "/log4j.jar";
+            String externalJarsDirectoryPath = "/";
             ExternalJarLoader.loadJarsFromDirectory(externalJarsDirectoryPath);
 
             Class<?> logManagerClass = Class.forName("org.apache.logging.log4j.LogManager");
@@ -30,7 +30,7 @@ public class JarLoaderController {
             logger.info("This is a log message from the dynamically loaded log4j.");
             // Logger logger = Logger.getLogger(JarLoaderController.class);
             // logger.info("This is an example log message.");
-            return ResponseEntity.ok("JARs loaded successfully!");
+            return ResponseEntity.ok("JARs loaded successfully!!!");
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to load JARs.");
