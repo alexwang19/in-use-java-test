@@ -3,7 +3,7 @@ VOLUME /tmp
 
 ARG JAR_FILE
 ADD target/spring-boot-2-hello-world-1.0.2-SNAPSHOT.jar app.jar
-ADD test2/BOOT-INF/lib/log4j-core-2.14.1.jar log4j.jar
+ADD files/log4j-core-2.14.1.jar log4j.jar
 
 ENV JAR_OPTS=""
 ENV JAVA_OPTS=""
